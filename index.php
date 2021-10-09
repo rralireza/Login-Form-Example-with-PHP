@@ -22,6 +22,10 @@
             }
             header('location: main.html');
         }
+        else
+        {
+            header('location: index.php?login=no');
+        }
     }
 
 ?>
@@ -63,6 +67,16 @@
                             <h3>Sign In</h3>
                             <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
                         </div>
+                        <?php
+                        if(isset($_GET['login']))
+                        {
+                        ?>
+                        <div class="alert alert-danger text-center">
+                            Username or Password is Incorrect!
+                        </div>
+                        <?php
+                        }
+                        ?>
                         <form method="post">
                             <div class="form-group first">
                                 <label for="username">Username</label>
